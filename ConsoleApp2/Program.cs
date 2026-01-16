@@ -22,6 +22,8 @@ namespace ConsoleApp2
             }
 
             //2
+            try
+            {
             Console.Write("Введите первое число: ");
             int a = int.Parse(Console.ReadLine());
 
@@ -31,6 +33,15 @@ namespace ConsoleApp2
             // Если b = 0, программа "упадет" здесь
             int result = a / b;
             Console.WriteLine($"Результат: {result}");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Ошибка: неверный формат данных");
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Ошибка: делить на ноль нельзя");
+            }
 
             //3
             try
